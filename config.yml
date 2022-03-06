@@ -25,7 +25,7 @@ params:
   title: Wallace Labs
   description: "ExampleSite description"
   keywords: [Blog, Portfolio, PaperMod]
-  author: Me
+  author: Samuel Wallace
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
@@ -77,15 +77,19 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Content: >
+            **Welcome to my blog!**
+
+            - My name is Samuel Wallace and documented here is an assortment of technical projects I've undertaken over the years. I hope you find my writing helpful in your own projects-- please feel free to connect with me on Discord or Github with any questions or comments. Cheers!
+
 
   socialIcons:
     - name: twitter
       url: "https://twitter.com/s_wallace17"
+    - name: discord
+      url: "https://discord.gg/RvGUzxAyST"
     - name: linkedin
       url: "https://linkedin.com/in/s-wallace17"
-    - name: discord
-      url: "https://discord.com"
     - name: github
       url: "https://github.com/swallace17"
 
