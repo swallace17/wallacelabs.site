@@ -44,7 +44,9 @@ Our goal here is to setup your server to act as a Docker host. The Operating Sys
 Begin by [installing the Docker Engine](https://docs.docker.com/engine/install/) using the instructions specific to your OS (If you do happen to be using Unraid, Docker is already installed). Once Docker is installed, we're going to setup a development environment for your site by setting up a few contaniers.
 
 ### Configuring the Development Environment
-Now we're going to build your site using the [Hugo Docker Container](https://hub.docker.com/r/klakegg/hugo/). The Hugo container is not designed to be
+Now we're going to build your site using the [Hugo Docker Container](https://hub.docker.com/r/klakegg/hugo/). This image on Docker Hub is highly configurable for integration into custom web-publishing workflows. For our use, we'd like to have a basic container which, when run, provides an interactive shell environment in which we can run hugo commands. The below docker compose file acomplishes this:
+
+{{< gist swallace17 2ce37da57497e37ec36110c24eb20668 >}}
 
 
 start by [installing Hugo](https://gohugo.io/getting-started/installing/). I reccomend the [Docker method](https://gohugo.io/getting-started/installing/#docker) as it keeps everything in a neat package isolated from the rest of your system, but installing directly to your host works fine too, and is a bit less complicated.
