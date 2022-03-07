@@ -34,11 +34,24 @@ In order to successfully build and host using this method, the below are prerequ
 If you can check all those boxes, you should be good to go.
 
 ## Phase One - Getting the Site Running Locally
-Before worrying about domain DNS records, web hosting, and port-forwarding rules, we're first going to focus on getting a site running on your local network. The first step is to get your web-server setup.
+Before worrying about domain DNS records, web hosting, and port-forwarding rules, we're first going to focus on getting a site running on your local network. First, we'll setup the web-server.
 
 ### Prepareing Your Web-Server.
 Our goal here is to setup your server to act as a Docker host. The Operating System (OS) you choose is mostly up to your preference, as Docker can be run on Windows, macOS, or Linux.
 
 > *A quick aside: If you plan on using this Web-Server as a general pupose home server, I would recommend the [Unraid OS](https://unraid.net). For the unfamiliar, Unraid is a Linux-based OS purpose built for home server and Network-Attached-Storage (NAS) functionality. That being said-- it is definitly worth considering the security implications of running a web host on the same computer you use for other general purpose tasks. By using a computer for web hosting, you are inherintly opening up your system to the internet. There is a lot to be said for isolating your webhost through any variety of means; However, a thorough consideration of these potential risks, and the network hardening measures which might be taken to mitigate them, is outside the scope of this disucssion. A post for another day, perhaps. For now, suffice it to say that our risk factor here is not particularly large, due in large part to the fact that we will be hosting a static site, rather than a dynamic one. Had I opted to host a dynamic site using Wordpress, I would be singing a different tune. [See here](https://srandby.org/digital-writing/index.html#randby-process) for additional reading on the security implications of static vs. dynamic sites.*
 
-Begin by [installing the Docker Engine](https://docs.docker.com/engine/install/) using the instructions specific to your OS. 
+Begin by [installing the Docker Engine](https://docs.docker.com/engine/install/) using the instructions specific to your OS (If you do happen to be using Unraid, Docker is already installed). Once Docker is installed, we're going to setup a development environment for your site by setting up a few contaniers.
+
+### Configuring the Development Environment
+First, we're going to install the Hugo Container.
+
+//**Test Hugo Docker container and continue based around hosting Hugo on docker**
+
+start by [installing Hugo](https://gohugo.io/getting-started/installing/). I reccomend the [Docker method](https://gohugo.io/getting-started/installing/#docker) as it keeps everything in a neat package isolated from the rest of your system, but installing directly to your host works fine too, and is a bit less complicated.
+
+
+
+
+### Configure Additional Development Environments
+This may sound counterintuitive, but I would reccomend setting up as additioanl development enviornment on your everyday computer to do most of your site development on--setting up the site, testing changes, writing posts, etc. Then, whenever you are ready to publish, you push your changes up to your Github repo, and pull them down on the web server. Boom, published. This is how I personally develop for my site most of the time. On my laptop, I use the Atom text editor
