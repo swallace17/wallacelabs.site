@@ -44,9 +44,8 @@ Our goal here is to setup your server to act as a Docker host. The Operating Sys
 Begin by [installing the Docker Engine](https://docs.docker.com/engine/install/) using the instructions specific to your OS (If you do happen to be using Unraid, Docker is already installed). Once Docker is installed, we're going to setup a development environment for your site by setting up a few contaniers.
 
 ### Configuring the Development Environment
-First, we're going to install the Hugo Container.
+Now we're going to build your site using the [Hugo Docker Container](https://hub.docker.com/r/klakegg/hugo/). The Hugo container is not designed to be
 
-//**Test Hugo Docker container and continue based around hosting Hugo on docker**
 
 start by [installing Hugo](https://gohugo.io/getting-started/installing/). I reccomend the [Docker method](https://gohugo.io/getting-started/installing/#docker) as it keeps everything in a neat package isolated from the rest of your system, but installing directly to your host works fine too, and is a bit less complicated.
 
@@ -55,3 +54,5 @@ start by [installing Hugo](https://gohugo.io/getting-started/installing/). I rec
 
 ### Configure Additional Development Environments
 This may sound counterintuitive, but I would reccomend setting up as additioanl development enviornment on your everyday computer to do most of your site development on--setting up the site, testing changes, writing posts, etc. Then, whenever you are ready to publish, you push your changes up to your Github repo, and pull them down on the web server. Boom, published. This is how I personally develop for my site most of the time. On my laptop, I use the Atom text editor
+
+Testing

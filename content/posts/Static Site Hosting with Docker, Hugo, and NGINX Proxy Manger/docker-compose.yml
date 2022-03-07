@@ -1,0 +1,10 @@
+services:
+  hugo:
+    image: klakegg/hugo:latest
+    entrypoint: /bin/sh
+    volumes:
+      - "*PATH TO SITE*/src"
+    ports:
+      - "1313:1313"
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
