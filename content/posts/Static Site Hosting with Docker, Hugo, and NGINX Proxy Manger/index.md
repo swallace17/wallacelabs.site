@@ -8,7 +8,7 @@ cover:
     # can also paste direct link from external site
     # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
     alt: "text"
-    caption: "My mission to build a site and achieve simple self-hosted web-hosting" #short written description of an image for accessibility, if image cannot be viewed
+    caption: "My mission to build a site and achieve simple DIY web-hosting" #short written description of an image for accessibility, if image cannot be viewed
     relative: false # To use relative path for cover image, used in hugo Page-bundles
     responsiveImages: true
     linkFullImages: true
@@ -18,14 +18,14 @@ params:
     ShowPostNavLinks: true
 ---
 ## Overview
-It seems appropriate that my first post on this site be an exploration of its own technical underpinnings. That being said, before I get too far into the weeds, a bit of context. When I set out to build my site my goal was to self-host it using docker containers, with the whole site built from a git repo of markdown files stored in Github. Unpacking that a bit:
+It seems appropriate that my first post on this site be an exploration of its own technical underpinnings. That being said, before I get too far into the weeds, a bit of context. When I set out to build my site I had a few goals in mind. Those goals can be reasonably summed up as wanting to self-host a site using docker containers, with the whole thing built from a git repo of markdown files stored in Github. Unpacking that a bit:
 
 * Self-Host
   * Run all the website infrastructure in my home, and avoid paying a hosting provider like Squarespace or Wix, as nice as those tools can be.
 * Write all my posts in [markdown](https://daringfireball.net/projects/markdown/)
-  * Enables easy text-formatting, and allows me to do my writing in any number of great, markdown-supporting text-editor on basically any computing platform.
+  * Markdown enables easy text-formatting, and allows me to do my writing in any number of great, markdown-supporting text-editors on basically any computing platform.
 * Run all infrastructure in containers
-  * Running my web-hosting infrastructure entirely inside docker containers allows me easily change what computer is running my website (if/when that becomes necessary or desirable). Migrating to another computer I own, to a Virtual Private Server (VPS) I rent, or to the Cloud with Azure/AWS container hosting-- it all becomes trivial.
+  * Running my web-hosting infrastructure entirely inside docker containers allows me to easily change what computer is running my website (if/when that becomes necessary or desirable). Migrating to another computer I own, to a Virtual Private Server (VPS) I rent, or to the Cloud with Azure/AWS container hosting-- it all becomes trivial.
 * Store the site as a git repository in Github
   * Site files being a git repo in Github provides me with backups, and quick visibility into updates I make to my site over time. Along with docker containers, it makes it easy to move my site to a new host because I don't have to worry about transferring site files manually. All I have to do is initiate a git clone of my site's Github repo on the new host, and the site files are ready to go!
 
@@ -45,19 +45,20 @@ If you can check all those boxes, you should be good to go.
 ## Phase One - Getting the Site Running Locally
 Before worrying about domain DNS records, web hosting, and port-forwarding rules, we're first going to focus on getting a site running on your local network. First, we'll setup the web-server.
 
-### Preparing Your Web-Server.
+### Installing Docker
 Our goal here is to setup your server to act as a Docker host. The Operating System (OS) you choose is mostly up to your preference, as Docker can be run on Windows, macOS, or Linux.
 
-> *A quick aside: If you plan on using this Web-Server as a general purpose home server, I would recommend the [Unraid OS](https://unraid.net). For the unfamiliar, Unraid is a Linux-based OS purpose built for home server and Network-Attached-Storage (NAS) functionality. That being said-- it is definitely worth considering the security implications of running a web host on the same computer you use for other general purpose tasks. By using a computer for web hosting, you are inherently opening up your system to the internet. There is a lot to be said for isolating your web-host through any variety of means; However, a thorough consideration of these potential risks, and the network hardening measures which might be taken to mitigate them, is outside the scope of this discussion. A post for another day, perhaps. For now, suffice it to say that our risk factor here is not particularly large, due in large part to the fact that we will be hosting a static site, rather than a dynamic one. Had I opted to host a dynamic site using Wordpress, I would be singing a different tune. [See here](https://srandby.org/digital-writing/index.html#randby-process) for additional reading on the security implications of static vs. dynamic sites.*
+> *A quick aside: If you plan on using your Web-Server as a general purpose home server, it is definitely worth considering the security implications of running a web host on the same computer you use for other general purpose tasks. By using a computer for web hosting, you are inherently opening up this system to the internet, and there is a lot to be said for isolating a web-host system through any variety of means. A thorough consideration of these potential risks, and the network hardening measures which might be taken to mitigate them, is outside the scope of this discussion. A post for another day, perhaps. For now though, suffice it to say that our risk factor here is not particularly large, due primarily to the fact that we will be hosting a static site, rather than a dynamic one. Had I opted to host a dynamic site using Wordpress, or something of the like, I would be singing a different tune. For additional reading on the security implications of static vs. dynamic sites, [see here](https://srandby.org/digital-writing/index.html#randby-process).*
 
-Begin by [installing the Docker Engine](https://docs.docker.com/engine/install/) using the instructions specific to your OS (If you do happen to be using Unraid, Docker is already installed). Once Docker is installed, we're going to setup a development environment for your site by setting up a few containers.
+Begin by [installing the Docker Engine](https://docs.docker.com/engine/install/) using the instructions specific to your OS. With Docker installed, we can now begin setting up the first container we'll be using.
 
-### Configuring the Development Environment
-Now we're going to build the site using the [Hugo Docker Container](https://hub.docker.com/r/klakegg/hugo/). This image on Docker Hub is highly configurable for integration into custom web-publishing workflows. For our use, we'd like to have a basic container which, when run, provides an interactive shell environment where we can run Hugo commands. The below docker compose file will accomplish this:
+### Setting up a Hugo container
+
+To create the site, we will be using the [Hugo Docker Container](https://hub.docker.com/r/klakegg/hugo/). Hugo's Docker-Hub image is highly configurable, offering many different tags for specialized integration into custom web-publishing workflows. For our use, all we really want is basic container which, when run, provides an interactive shell environment where we can run Hugo commands. The below docker compose file will accomplish this:
 
 {{< gist swallace17 2ce37da57497e37ec36110c24eb20668 >}}
 
-Go ahead and download that file. Update the volume mapping from ``*PATH TO SITE*`` to wherever you would like to create your site's git repo to live on the host system. Open up a Terminal/Powershell session, navigate to whichever folder ``docker-compose.yml`` has been downloaded to, and run the following command:
+Go ahead and download that file. Update the volume mapping from ``*PATH TO SITE*`` to wherever you would like your site's git repo to live on the host system. Open up a Terminal/Powershell session, navigate to whichever folder ``docker-compose.yml`` has been downloaded to, and run the following command:
 
 ```bash
 docker-compose up
@@ -71,6 +72,8 @@ Now open up Docker Desktop, and you should see your container running, like in t
 
 {{< figure src=compose-DD.png align=center >}}
 
+With the Hugo container setup and ready to go, we can now use it to create your site.
+
 ### Building your Site
 
 Now we're in business. Click the "CLI" button in Docker Desktop to open up a CLI session on your running container. This is how you'll interact with the Hugo program running inside the container. To start, we need to create a new site. Your CLI session will have opened up inside the containers ``/src`` folder by default. Lucky us, this is exactly where we want to be, no navigating to a different directory needed. Run the below command, and a blank Hugo site template will be initialized as a git repo inside the ``/src`` folder. Just be sure to change ``*YOUR_SITE_NAME*`` to whatever you would like to call the repo containing your site.
@@ -83,14 +86,14 @@ The site will be generated, and you will see the below message in your CLI sessi
 
 ![Site Creation Success](site-creation-success.png)
 
-Next up, as indicated in that success message, you'll need to [pick a theme](https://themes.gohugo.io) and install it. There are tons to choose from-- the site you are viewing now is running on [PaperMod](https://themes.gohugo.io/themes/hugo-papermod/). The theme you choose will have provided installation instructions. These instructions usually consist of installing the theme as a git-submodule. This method is convenient as it allows easily updating the theme by initiating a git pull on that submodule (if that sounds like greek, basically you'll have a one-click method of updating your theme later on). With your site created and your theme installed, you now have the basis of your site created.
+Next up, as indicated in that success message, you'll need to [pick a theme](https://themes.gohugo.io) and install it. There are tons to choose from-- the site you are viewing now is running on [PaperMod](https://themes.gohugo.io/themes/hugo-papermod/). The theme you choose will provide its own installation instructions. These instructions usually consist of installing the theme as a git-submodule. This method is convenient as it allows easily updating your theme by initiating a git pull on that submodule. Put more simply- you'll have a one-click method of updating to a new version of your chosen theme in the future, should you want to do so. Just make sure to run any necessary commands inside the Hugo container's CLI. With a blank Hugo site template created and your theme installed, the foundation of your site is in place.
 
 ### Creating your first post
 Next up, we're going to create a quick test post. Before that though, a brief rabbit-trail about Leaf Bundles.
 
 #### To Leaf-Bundle, or not to Leaf-Bundle
 
-> In a moment, I'm going to have you run a command that will create the first blog post on your newly created site. That command is going to create the post as something Hugo calls a [Leaf Bundle](https://gohugo.io/content-management/page-bundles/). I recommend creating all your posts as a leaf bundle because, among other benefits, it allows you to bundle images that are displayed in your post in the same folder as the markdown file that makes up the post itself. If you did not create your Posts as leaf bundles, then all images for all your posts would all be lumped together, completely disorganized, inside a folder named ``static`` at the root level of your site folder. The diagrams visualize that a bit:
+> In a moment, I'm going to have you run a command that will create the first blog post on your newly created site. That command is going to create the post as something Hugo calls a [Leaf Bundle](https://gohugo.io/content-management/page-bundles/). I recommend creating all your posts as a leaf bundle because, among other benefits, it allows you to bundle images that are displayed in your post in the same folder as the markdown file that makes up the post itself. If you did not create your Posts as leaf bundles, then all images for all your posts will be lumped together, completely disorganized, inside a folder named ``static`` at the root level of your site folder. The below diagrams should help visualize this:
 
 **Leaf Bundle Post Structure**
 >```text
@@ -114,31 +117,31 @@ Next up, we're going to create a quick test post. Before that though, a brief ra
 >    ├── my-other-post_image1.png
 >    └── my-other-post_image2.jpg
 
-I highly prefer the structure provided by the leaf bundle method, and I think you will too. Back to the business at hand:
+I highly prefer the structure provided by the leaf bundle method, and I think you will too. Now, back to the business of creating your first post.
 
 #### Creating a post (As a Leaf-Bundle)
-Run the below command to create a test post on your site:
+Run the below command in the Hugo container CLI to create a test post on your site:
 
 ```bash
 hugo new content/posts/*YOUR_POST_NAME*/index.md
 ```
 
-If you wish, feel free to modify the index.md to add a quick "hello world" message, or something of the like, but it's not necessary. Boom, first post has been created.
+If you wish, feel free to modify index.md to add a quick "hello world" message, or something of the like, but do not feel obligated. Your first post has been created, whether it has anything written in it or not.
 
 ### Hosting your Site! (Locally)
-Hugo includes a web-server for running a site on your local network to see how things will appear in a browser before publishing them to the web. We're going to take advantage of that now. Inside a CLI session for your Hugo container, run the below command:
+Hugo includes a web-server for running a site on your local network. Why would you want to run a site locally? It allows previewing how your site will appear prior to publishing it to the web. We're going to take advantage of that now. Run the below command (again, inside the Hugo Container CLI):
 
 ```bash
 hugo server
 ```
 
-With any luck, you'll be greeted with the following message:
+With luck, you'll be greeted with the following message:
 
 ![Local Hosting Success](hugo-server.png)
 
-Navigate to [http://localhost:1313](http://localhost:1313) to view your site!
+Open [http://localhost:1313](http://localhost:1313) in your browser of choice to view your site!
 
-> If you were not so lucky, you may have gotten an error in your CLI session that says something like "Check your Hugo installation: you need the extended version to build...". This is because some themes require an extended version of the Hugo docker container in order to build successfully. If that happens to you, change line 3 of ``docker-compose.yml`` from ``image: klakegg/hugo:latest`` to ``image: klakegg/hugo:ext-alpine``. Shut down your container, and relaunch it using ``docker-compose up`` and you should be good to go.
+> If you were not so lucky, you may have gotten an error in your CLI session that says something like "Check your Hugo installation: you need the extended version to build...". This is because some themes require an extended version of the Hugo docker container in order to build successfully. Remember earlier, when I said the Hugo image is highly configurable, has many tags, blah blah blah? Here we have another example of that. If this happens to you, change line 3 of ``docker-compose.yml`` from ``image: klakegg/hugo:latest`` to ``image: klakegg/hugo:ext-alpine``. Shut down your container, relaunch it using ``docker-compose up``, and you should be good to go.
 
 ## Phase Two - Hosting your Site on the Web!
 
