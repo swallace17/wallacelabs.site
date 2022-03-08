@@ -3,6 +3,15 @@ title: "Static Site Hosting with Docker, Hugo, and NGINX Proxy Manger"
 date: 2022-03-03T13:35:19-05:00
 draft: true
 ShowToc: true
+cover:
+    image: "cover.png"
+    # can also paste direct link from external site
+    # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
+    alt: "text"
+    caption: "text" #short written description of an image for accessibility, if image cannot be viewed
+    relative: false # To use relative path for cover image, used in hugo Page-bundles
+    responsiveImages: true
+    linkFullImages: true
 params:
     ShowBreadCrumbs: true
     ShowShareButtons: true
@@ -44,12 +53,20 @@ Our goal here is to setup your server to act as a Docker host. The Operating Sys
 Begin by [installing the Docker Engine](https://docs.docker.com/engine/install/) using the instructions specific to your OS (If you do happen to be using Unraid, Docker is already installed). Once Docker is installed, we're going to setup a development environment for your site by setting up a few contaniers.
 
 ### Configuring the Development Environment
-Now we're going to build your site using the [Hugo Docker Container](https://hub.docker.com/r/klakegg/hugo/). This image on Docker Hub is highly configurable for integration into custom web-publishing workflows. For our use, we'd like to have a basic container which, when run, provides an interactive shell environment in which we can run hugo commands. The below docker compose file acomplishes this:
+Now we're going to build the site using the [Hugo Docker Container](https://hub.docker.com/r/klakegg/hugo/). This image on Docker Hub is highly configurable for integration into custom web-publishing workflows. For our use, we'd like to have a basic container which, when run, provides an interactive shell environment in which we can run hugo commands. The below docker compose file acomplishes this:
 
 {{< gist swallace17 2ce37da57497e37ec36110c24eb20668 >}}
 
+Go ahead and download that file. Update the volume mapping from ``*PATH TO SITE*`` to whereever you would like to create your site's git repo on the host system, and save it to a new folder. Open up a Terminal/Powershell session at that new folders location and run the following command:
 
-start by [installing Hugo](https://gohugo.io/getting-started/installing/). I reccomend the [Docker method](https://gohugo.io/getting-started/installing/#docker) as it keeps everything in a neat package isolated from the rest of your system, but installing directly to your host works fine too, and is a bit less complicated.
+```bash
+docker-compose up
+```
+
+You should see the following in your Terminal session and in Docker Desktop:
+
+![Compose Success, Terminal](compose-terminal.png)
+![Compose Success, Docker Desktop](compose-DD.png)
 
 
 
