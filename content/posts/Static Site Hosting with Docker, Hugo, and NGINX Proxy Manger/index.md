@@ -8,7 +8,7 @@ cover:
     # can also paste direct link from external site
     # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
     alt: "text"
-    caption: "text" #short written description of an image for accessibility, if image cannot be viewed
+    caption: "My Mission to Build a Site and Achieve Simple Self-Hosted Web-Hosting" #short written description of an image for accessibility, if image cannot be viewed
     relative: false # To use relative path for cover image, used in hugo Page-bundles
     responsiveImages: true
     linkFullImages: true
@@ -53,23 +53,108 @@ Our goal here is to setup your server to act as a Docker host. The Operating Sys
 Begin by [installing the Docker Engine](https://docs.docker.com/engine/install/) using the instructions specific to your OS (If you do happen to be using Unraid, Docker is already installed). Once Docker is installed, we're going to setup a development environment for your site by setting up a few contaniers.
 
 ### Configuring the Development Environment
-Now we're going to build the site using the [Hugo Docker Container](https://hub.docker.com/r/klakegg/hugo/). This image on Docker Hub is highly configurable for integration into custom web-publishing workflows. For our use, we'd like to have a basic container which, when run, provides an interactive shell environment in which we can run hugo commands. The below docker compose file acomplishes this:
+Now we're going to build the site using the [Hugo Docker Container](https://hub.docker.com/r/klakegg/hugo/). This image on Docker Hub is highly configurable for integration into custom web-publishing workflows. For our use, we'd like to have a basic container which, when run, provides an interactive shell environment where we can run hugo commands. The below docker compose file will acomplish this:
 
 {{< gist swallace17 2ce37da57497e37ec36110c24eb20668 >}}
 
-Go ahead and download that file. Update the volume mapping from ``*PATH TO SITE*`` to whereever you would like to create your site's git repo on the host system, and save it to a new folder. Open up a Terminal/Powershell session at that new folders location and run the following command:
+Go ahead and download that file. Update the volume mapping from ``*PATH TO SITE*`` to whereever you would like to create your site's git repo to live on the host system. Open up a Terminal/Powershell session, navigate to whichever folder ``docker-compose.yml`` has been downloaded to, and run the following command:
 
 ```bash
 docker-compose up
 ```
 
-You should see the following in your Terminal session and in Docker Desktop:
+You should see the following in your Terminal session:
 
 ![Compose Success, Terminal](compose-terminal.png)
+
+Now open up Docker Desktop, and you should see your container running, like in this picture:
+
 ![Compose Success, Docker Desktop](compose-DD.png)
 
+### Building your Site
+
+Now we're in business. Click the "CLI" button in Docker Desktop to open up a CLI session on your running container. This is how you'll interact with the Hugo program running inside the container. To start, we need to create a new site. Your CLI session will have opened up insde the containers ``/src`` folder by default. Lucky us, this is exactly where we want to be, no navigating to a different directory needed. Run the below command, and a blank hugo-site template will be initialized as a git repo inside the ``/src`` folder. Just be sure to change ``*YOUR_SITE_NAME*`` to whatever you would like to call the repo containing your site.
+
+```bash
+hugo new site *YOUR_SITE_NAME*
+```
+
+The site will be gerated, and you will see the below message in your CLI session:
+
+![Site Creation Success](site-creation-success.png)
+
+Next up, as indicated in that success message, you'll need to [pick a theme](https://themes.gohugo.io) and install it. There are tons to choose from-- the site you are viewing now is running on [PaperMod](https://themes.gohugo.io/themes/hugo-papermod/). The theme you choose will have provided installation instructions. These insturctions usually consist of installing the theme as a git-submodule. This method is convienet as it allows easily updating the theme by initiating a git pull on that submodule (if that sounds like greek, basically you'll have a one-click method of updating your theme later on). With your site created and your theme installed, you now have the basis of your site created.
+
+### Creating your first post
+Next up, we're gonig to create a quick test post. Before that though, a brief rabbit-trail about Leaf Bundles.
+
+#### To Leaf-Bundle, or not to Leaf-Bundle
+
+> In a moment, I'm going to have you run a command that will create the first blog post on your newly created site. That command is going to crete the post as something Hugo calls a [Leaf Bundle](https://gohugo.io/content-management/page-bundles/). I reccomend creating all your posts as a leaf bundle becuase, among other benefits, it allows you to bundle images that are displayed in your post in the same folder as the markdown file that makes up the post itself. If you did not create your Posts as leaf bundles, than all images for all your posts would all be lumped together, completly disorganized, inside a folder named ``static`` at the root level of your site folder. The diagrams visualize that a bit:
+
+**Leaf Bundle Post Structure**
+>```text
+>content/
+>└──posts
+>    └── YOUR_POST_NAME
+>        ├── image1.png
+>        ├── image2.png
+>        └── index.md
+
+**Non-Leaf Bundle Post Structure**
+>```text
+>content/
+>├── posts
+>│   ├── my-post.md
+>│   └── my-other-post.md
+>└── static
+>    ├── my-post_image1.png
+>    ├── my-post_image2.png
+>    ├── my-post_image3.jpg
+>    ├── my-other-post_image1.png
+>    └── my-other-post_image2.jpg
+
+I highly prefer the structure provided by the leaf bundle method, and I think you will too. Back to the business at hand:
+
+#### Creating a post (As a Leaf-Bundle)
+Run the below command to create a test post on your site:
+
+```bash
+hugo new content/posts/*YOUR_POST_NAME*/index.md
+```
+
+Feel free to edit modify the created index.md to add a quick "hello world" message, or something of the like, if you wish, but its not necessary. Boom, first post has been created.
+
+### Hosting your Site! (Locally)
+Hugo includes a web-server for running a site on your local network to see how things will appear in a browser before publishing them to the web. We're going to take advantage of that now. Inside a CLI session for your Hugo container, run the below command:
+
+```bash
+hugo server
+```
+
+With any luck, you'll be greeted with the following message:
+
+![Local Hosting Success](hugo-server.png)
+
+Navigate to [http://localhost:1313](http://localhost:1313) to view your site!
+
+> If you were not so lucky, you may have gotten an error in your CLI session that says something like "Check your Hugo installtion: you need the extended version to build...". This is because some themes require an extended version of the hugo docker container in order to build successfully. If that happens to you, change line 3 of ``docker-compose.yml`` from ``image: klakegg/hugo:latest`` to ``image: klakegg/hugo:ext-alpine``. Shut down your container, and relaunch it using ``docker-compose up`` and you should be good to go.
+
+## Phase Two - Hosting your Site on the Web!
 
 
+
+
+
+
+
+
+
+
+
+
+
+## Phase Three - Quality of Life Reccomendations
 
 ### Configure Additional Development Environments
 This may sound counterintuitive, but I would reccomend setting up as additioanl development enviornment on your everyday computer to do most of your site development on--setting up the site, testing changes, writing posts, etc. Then, whenever you are ready to publish, you push your changes up to your Github repo, and pull them down on the web server. Boom, published. This is how I personally develop for my site most of the time. On my laptop, I use the Atom text editor
