@@ -10,7 +10,7 @@ outputs:
         - JSON # is necessary
 
 enableRobotsTXT: true
-buildDrafts: false
+buildDrafts: true
 buildFuture: false
 buildExpired: false
 

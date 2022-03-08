@@ -11,12 +11,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 03 Mar 2022 13:35:19 -0500</lastBuildDate><atom:link href="https://wallacelabs.tech/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test</title>
-      <link>https://wallacelabs.tech/posts/test/</link>
+      <title>Static Site Hosting with Docker, Hugo, and NGINX Proxy Manger</title>
+      <link>https://wallacelabs.tech/posts/static-site-hosting-with-docker-hugo-and-nginx-proxy-manger/</link>
       <pubDate>Thu, 03 Mar 2022 13:35:19 -0500</pubDate>
       
-      <guid>https://wallacelabs.tech/posts/test/</guid>
-      <description>Hello World</description>
+      <guid>https://wallacelabs.tech/posts/static-site-hosting-with-docker-hugo-and-nginx-proxy-manger/</guid>
+      <description>Overview It seems appropriate that my first post on this site be an exploration of its own technical underpinnings. That being said, before I get too far into the weeds, a bit of context. When I set out to build my site, my goal was to self-host it using docker containers, with the whole site built from a git repo of markdown files stored in Github. Unpacking that a bit:</description>
     </item>
     
   </channel>
