@@ -38,7 +38,7 @@ In order to successfully build and host using this method, the below are prerequ
     * As part of owning a domain, you will have control of your domain's DNS records. If you somehow own a domain but do not have the ability to manage its DNS records, you'll have to get that worked out before proceeding.
 2. Own an internet-connected computer. This computer will be your web-server. Ideally, that computer will be a server in the sense that it is always on, and dedicated to server functions. While you could host your website on your everyday use computer, I would not recommend it.
     * In terms of actual hardware though? It can be basically anything from a tiny Raspberry Pi to a massive EPYC Server. The important thing is that it can run docker, is connected to the internet, and is always on.
-3. The ability to manage port-forwarding rules on your network's router/gateway. Port-forwarding on your router, along with setting your domain's DNS records, are the two keys required to map traffic from the internet to the website running on your web-server. 
+3. The ability to manage port-forwarding rules on your network's router/gateway. Port-forwarding on your router, along with setting your domain's DNS records, are the two keys required to map traffic from the internet to the website running on your web-server.
 
 If you can check all those boxes, you should be good to go.
 
@@ -46,7 +46,7 @@ If you can check all those boxes, you should be good to go.
 Before worrying about domain DNS records, web hosting, and port-forwarding rules, we're going to focus on getting a site running on your local network. First, we'll setup the web-server.
 
 ### Installing Docker
-Our goal here is to setup your server to act as a Docker host. The Operating System (OS) you choose is mostly up to your preference, as Docker can be run on Windows, macOS, or Linux. It is, however, worth mentioning that less setup is required on Linux and macOS. On Windows, you will need to configure Windows Subsystem for Linux (WSL) and subsequently, a Linux Distribution of your choice to run on WSL, in order to run docker in an ideal manner. This is not *overly complicated*, but it is outside the scope of this discussion. A post for another day, perhaps. 
+Our goal here is to setup your server to act as a Docker host. The Operating System (OS) you choose is mostly up to your preference, as Docker can be run on Windows, macOS, or Linux. It is, however, worth mentioning that less setup is required on Linux and macOS. On Windows, you will need to configure Windows Subsystem for Linux (WSL) and subsequently, a Linux Distribution of your choice to run on WSL, in order to run docker in an ideal manner. This is not *overly complicated*, but it is outside the scope of this discussion. A post for another day, perhaps.
 
 > **A quick aside:** *If you plan on using this system as a general purpose home server, in additional to using it as a web-host, it is definitely worth considering the security implications of doing so. By using a computer for web hosting, you are inherently opening up this system to the internet, and there is a lot to be said for the practice of isolating web-hosts on your network through any variety of means. A thorough consideration of these potential risks, and the network hardening measures which might be taken to mitigate them, would be a large digression, and thus is outside the scope of this discussion. Another post for another day, perhaps. For now though, suffice it to say that our risk factor here is not particularly large, due primarily to the fact that you will be hosting a static site, rather than a dynamic one. Had I opted to host a dynamic site using Wordpress, or something of the like, I would be singing a different tune. For additional reading on the security implications of static vs. dynamic sites, [see here](https://srandby.org/digital-writing/index.html).*
 
@@ -76,9 +76,9 @@ With the Hugo container setup and ready to go, you can now use it to create your
 
 ### Building your Site
 
-Now we're in business. Click the "CLI" button in Docker Desktop to open up a CLI session on your Hugo container. This is how you'll interact with the containerized Hugo program moving forward. 
+Now we're in business. Click the "CLI" button in Docker Desktop to open up a CLI session on your Hugo container. This is how you'll interact with the containerized Hugo program moving forward.
 
-Your CLI session will have opened up inside the container's ``/src`` folder by default. The ``/src`` folder is a volume mapped to the host. Whatever data the container puts in this folder, you will be able to access from the host, and vice versa. In docker containers, data inside a volume map like this one is also the only data that will persist after the container is stopped or restarted (i.e. the ``/src`` folder is the only thing that does not get deleted when the container stops). The rest of the container is rebuilt from scratch every time the container starts. Given you probably want your sites to not be deleted after you create it, you will want to create your site inside the ``/src`` folder. Furthermore, whenever you run Hugo commands, you'll want to be in this folder. This is where your site is going to be created, and Hugo commands will automatically act on whatever site is present in the directory the command is run from. 
+Your CLI session will have opened up inside the container's ``/src`` folder by default. The ``/src`` folder is a volume mapped to the host. Whatever data the container puts in this folder, you will be able to access from the host, and vice versa. In docker containers, data inside a volume map like this one is also the only data that will persist after the container is stopped or restarted (i.e. the ``/src`` folder is the only thing that does not get deleted when the container stops). The rest of the container is rebuilt from scratch every time the container starts. Given you probably want your sites to not be deleted after you create it, you will want to create your site inside the ``/src`` folder. Furthermore, whenever you run Hugo commands, you'll want to be in this folder. This is where your site is going to be created, and Hugo commands will automatically act on whatever site is present in the directory the command is run from.
 
  So, with a CLI session opened at ``/src``, run the below command. When you do, a blank Hugo site template will be initialized as a git repo inside the ``/src`` folder. Just be sure to change ``*YOUR_SITE_NAME*`` to whatever you would like to call the repo containing your site.
 
@@ -130,15 +130,15 @@ Run the below command in the Hugo container CLI to create a test post on your si
 hugo new content/posts/*YOUR_POST_NAME*/index.md
 ```
 
-If you wish, feel free to modify index.md to add a quick "hello world" message, or something of the like, but do not feel obligated. Your first post has been created, whether it has anything written in it or not. One last command to run now. 
+If you wish, feel free to modify index.md to add a quick "hello world" message, or something of the like, but do not feel obligated. Your first post has been created, whether it has anything written in it or not. One last command to run now.
 
 ```bash
 hugo
 ```
 
-Running the commend ``hugo`` by itself will trigger Hugo to generate your site. It will review your theme and your posts and spit out all the HTML files (and everything else) that make up your site. It will output the generated site inside the ``public`` folder. 
+Running the commend ``hugo`` by itself will trigger Hugo to generate your site. It will review your theme and your posts and spit out all the HTML files (and everything else) that make up your site. It will output the generated site inside the ``public`` folder.
 
-> Later on, this folder is what your web-server will be pushing out to the internet whenever someone accesses your site. If you want an update to your site to show up on the internet, the change has to be reflected inside the ``public`` folder. With that in mind, any time you want to update your site, plan on running the ``hugo`` command. 
+> Later on, this folder is what your web-server will be pushing out to the internet whenever someone accesses your site. If you want an update to your site to show up on the internet, the change has to be reflected inside the ``public`` folder. With that in mind, any time you want to update your site, plan on running the ``hugo`` command.
 
 ### Hosting your Site! (Locally)
 Hugo includes a web-server for running a site on your local network. Why would you want to run a site locally? It allows previewing how your site will appear prior to publishing it to the web. To take advantage of that, run the below command (again, inside the Hugo Container's CLI):
@@ -156,30 +156,59 @@ Open [http://localhost:1313](http://localhost:1313) in your browser of choice to
 > If you were not so lucky, you may have gotten an error in your CLI session that says something like "Check your Hugo installation: you need the extended version to build...". This is because some themes require an extended version of the Hugo docker container in order to build successfully. Remember earlier, when I said the Hugo image is highly configurable, has many tags, blah blah blah? Here you have a great illustration of that fact. If this happens to you, change line 3 of ``docker-compose.yml`` from ``image: klakegg/hugo:latest`` to ``image: klakegg/hugo:ext-alpine``. Shut down your container, relaunch it using ``docker-compose up``, and you should be good to go.
 
 ## Phase Two - Hosting your Site on the Web!
-Believe it or not, this should be the easy part. We're going to spin up another container, this time for [NGINX Proxy Manager (NPM)](https://nginxproxymanager.com/). NGINX Proxy Manager is an awesome web-based GUI built on top of the [NGINX web server](https://www.nginx.com/). It is generaly used for securly exposing services running on your network to the internet. For example, if you wanted to securly access your [Home Assistant Server](https://www.home-assistant.io/) over the internet, rather than strictly on your home network, or via VPN. In that scenario, you already have a web-server operating a given service or web-app locally, you are just using NPM as a reverse proxy to access that service over the internet. So how can NPM be used to host your site? With a little bit of tricky configuration, NPM can be used to host static files to the web-- which is exactly what Hugo static sites are!
+Believe it or not, this should be the easy part. We're going to spin up another container, this time for [NGINX Proxy Manager (NPM)](https://nginxproxymanager.com/). NGINX Proxy Manager is an awesome web-based GUI built on top of the [NGINX web server](https://www.nginx.com/). It is generally used for securely exposing services running on your network to the internet. For example, if you wanted to securely access your [Home Assistant Server](https://www.home-assistant.io/) over the internet, rather than strictly on your home network, or via VPN. In that scenario, you already have a web-server operating a given service or web-app locally, you are just using NPM as a reverse proxy to access that service over the internet. So how can NPM be used to host your site? With a little bit of tricky configuration, NPM can be used to host static files to the web-- which is exactly what Hugo static sites are!
 
-The below ``docker-compose.yml`` can be used to create an NPM container on your host. Same drill as before, download the file, and you'll need to make a couple edits before running. 
+Before getting into that though, we're going to quickly configure DNS rules for your domain, and add port forwarding rules to your router.
+
+### Configuring your Router and Domain
+
+
+### Setting up an NGINX Proxy Manager container
+
+The below ``docker-compose.yml`` can be used to create an NPM container on your host. Same drill as before, download the file, and you'll need to make a couple edits before running.
 
 {{< gist swallace17 ac84eccb6fdca3c9b62ee4c162b1ba3a >}}
 
-First, you'll need to chose where on your host system you would like NPM data and LetsEncrypt certificates to live on your host system. I reccommend creating a folder named ``container_app_data`` at the root of your host, with sub-folder ``NPM``. Do that, then just change ``*PATH*`` in lines 10 and 11 of ``docker-compose.yml`` to ``/container_app_data/NPM``, and docker will automatically create sub-folders for Data and Lets Encypt at ``/container_app_data/NPM/data`` and ``/container_app_data/NPM/letsencrypt`` respectively. 
+First, you'll need to chose where on your host system you would like NPM data and LetsEncrypt certificates to live on your host system. I reccommend creating a folder named ``container_app_data`` at the root of your host, with sub-folder ``NPM``. Do that, then just change ``*PATH*`` in lines 10 and 11 of ``docker-compose.yml`` to ``/container_app_data/NPM``, and docker will automatically create sub-folders for Data and Lets Encypt at ``/container_app_data/NPM/data`` and ``/container_app_data/NPM/letsencrypt`` respectively.
 
-Lastly, you'll need to change ``*PATH TO SITE*`` in line 12. Set this to be the same as whatever you chose for ``*PATH TO SITE*`` when creating the Hugo container. Giving NPM access to ``*PATH TO SITE*/public`` will allow it to access your generated site (inside the Hugo container's public folder). 
+Lastly, you'll need to change ``*PATH TO SITE*`` in line 12. Set this to be the same as whatever you chose for ``*PATH TO SITE*`` when creating the Hugo container. Giving NPM access to ``*PATH TO SITE*/public`` will allow it to access your generated site (inside the Hugo container's public folder).
 
 With these modifications in place, open a Terminal/Powershell session at the location of ``docker-compose.yml`` and run the command:
 
 ```bash
 docker-compose up
 ```
-If everything is setup correctly in ``docker-compose.yml``, you'll be greeted by the following new container in Docker Desktop:
+If everything is setup correctly in ``docker-compose.yml``, the container will build and you'll be greeted by the following new container in Docker Desktop:
 
-{{< figure src=npm-dd.png align=center >}}
+{{< figure src=npm-dd.png align=center caption="Two containers now!" >}}
 
-With the container running, open up a browser on your host machine and navigate to [http://localhost:81](http://localhost:81).
+### Configuring NPM for Static-Site Hosting
+
+With the container running, open up a browser on your host machine and navigate to [http://localhost:81](http://localhost:81). When you do, you should see the NPM login page:
+
+{{< figure src=npm-browser.png align=center caption="" >}}
+
+To login, use the default username and password:
+
+```text
+Email:    admin@example.com
+Password: changeme
+```
+
+You will then be prompted to setup new login credentials- as with anything, make sure to setup a unique, strong password (I recommend [1Password](https://1password.com/) to help with this). Once you've setup your new login setup, click on "SSL certificates" in the tab bar, then "Add SSL Certificate." On this screen, type in your domain name, email and "I agree to the Let's Encrypt Terms of Service", like this:
+
+{{< figure src=create-cert.png align=center caption="" >}}
+
+Before clicking save, make sure to click the button to "Text Server Reachability". You should see the following message if successful:
+
+{{< figure src=domain-reachable.png align=center caption="" >}}
+
+Success here demonstrates
 
 
 
-## Phase Three - Quality of Life Recommendations
+## Phase Three - Wrapping Up
+Lets wrap up with connecting your site up to a Github repo, and some things you can do to enable some general quality-of-life improvements as you manage your site.
 
 ### Configure Additional Development Environments
 This may sound counterintuitive, but I would recommend setting up as additional development environment on your everyday computer to do most of your site development on--setting up the site, testing changes, writing posts, etc. Then, whenever you are ready to publish, you push your changes up to your Github repo, and pull them down on the web server. Boom, published. This is how I personally develop for my site most of the time. On my laptop, I use the Atom text editor
