@@ -1,5 +1,5 @@
 baseURL: "https://wallacelabs.tech"
-title: Wallace Labs
+title: wallaceLabs
 paginate: 5
 theme: PaperMod
 
@@ -22,7 +22,7 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Wallace Labs
+  title: wallaceLabs
   description: "ExampleSite description"
   keywords: [Blog, Portfolio, PaperMod]
   author: Samuel Wallace
