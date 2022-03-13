@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Wallace Labs</title>
-    <link>https://wallacelabs.tech/posts/</link>
-    <description>Recent content in Posts on Wallace Labs</description>
+    <title>Hugo on Wallace Labs</title>
+    <link>https://wallacelabs.tech/tags/hugo/</link>
+    <description>Recent content in Hugo on Wallace Labs</description>
     <image>
       <url>https://wallacelabs.tech/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://wallacelabs.tech/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 03 Mar 2022 13:35:19 -0500</lastBuildDate><atom:link href="https://wallacelabs.tech/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Mar 2022 13:35:19 -0500</lastBuildDate><atom:link href="https://wallacelabs.tech/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Static Site Hosting for Free with Docker, Hugo, and NGINX Proxy Manger</title>
       <link>https://wallacelabs.tech/posts/static-site-hosting-with-docker-hugo-and-nginx-proxy-manger/</link>
