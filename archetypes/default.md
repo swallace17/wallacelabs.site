@@ -12,6 +12,10 @@ cover:
     relative: false # To use relative path for cover image, used in hugo Page-bundles
     responsiveImages: true # Set false to reduce generation time and size of the site
     linkFullImages: true # Set true to enable hyperlinks to the full image size on post pages
+categories:
+  - "category"
+tags:
+  - "tag"
 params:
     ShowBreadCrumbs: true
     ShowShareButtons: true
