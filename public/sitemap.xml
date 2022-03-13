@@ -2,21 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://wallacelabs.tech/categories/</loc>
+    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/categories/docker/</loc>
+    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/tags/docker-compose/</loc>
+    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/tags/dynamic-dns-ddns/</loc>
+    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/tags/hugo/</loc>
+    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/tags/nginx-proxy-manager/</loc>
+    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
+  </url><url>
     <loc>https://wallacelabs.tech/posts/</loc>
     <lastmod>2022-03-03T13:35:19-05:00</lastmod>
   </url><url>
     <loc>https://wallacelabs.tech/posts/static-site-hosting-with-docker-hugo-and-nginx-proxy-manger/</loc>
     <lastmod>2022-03-03T13:35:19-05:00</lastmod>
   </url><url>
+    <loc>https://wallacelabs.tech/tags/</loc>
+    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/categories/tutorials/</loc>
+    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
+  </url><url>
     <loc>https://wallacelabs.tech/</loc>
+    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/categories/web-hosting/</loc>
     <lastmod>2022-03-03T13:35:19-05:00</lastmod>
   </url><url>
     <loc>https://wallacelabs.tech/archives/</loc>
   </url><url>
-    <loc>https://wallacelabs.tech/categories/</loc>
-  </url><url>
     <loc>https://wallacelabs.tech/search/</loc>
-  </url><url>
-    <loc>https://wallacelabs.tech/tags/</loc>
   </url>
 </urlset>
