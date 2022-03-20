@@ -9,7 +9,16 @@
       <link>https://wallacelabs.tech/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 03 Mar 2022 13:35:19 -0500</lastBuildDate><atom:link href="https://wallacelabs.tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2022 15:56:39 +0000</lastBuildDate><atom:link href="https://wallacelabs.tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Google Workspace Upload Limits</title>
+      <link>https://wallacelabs.tech/posts/exploring-google-workspace-upload-limits/</link>
+      <pubDate>Sun, 20 Mar 2022 15:56:39 +0000</pubDate>
+      
+      <guid>https://wallacelabs.tech/posts/exploring-google-workspace-upload-limits/</guid>
+      <description>Overview Google Workspace Enterprise plans (successor to G Suite Business plans) include unlimited Google Drive storage for licensed users, but there is a strict 750Gb limit on data a licensed user can upload to their account within 24 hours. This limit is generally quite reasonable and should not pose an issue. The vast majority of people today do not have internet connections sufficient to upload 750Gb of data within 24 hours even if they wanted to.</description>
+    </item>
+    
     <item>
       <title>Static Site Hosting for Free with Docker, Hugo, and NGINX Proxy Manger</title>
       <link>https://wallacelabs.tech/posts/static-site-hosting-with-docker-hugo-and-nginx-proxy-manger/</link>
