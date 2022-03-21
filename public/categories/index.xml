@@ -9,22 +9,40 @@
       <link>https://wallacelabs.tech/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 03 Mar 2022 13:35:19 -0500</lastBuildDate><atom:link href="https://wallacelabs.tech/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2022 15:56:39 +0000</lastBuildDate><atom:link href="https://wallacelabs.tech/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docker</title>
-      <link>https://wallacelabs.tech/categories/docker/</link>
-      <pubDate>Thu, 03 Mar 2022 13:35:19 -0500</pubDate>
+      <title>data backup</title>
+      <link>https://wallacelabs.tech/categories/data-backup/</link>
+      <pubDate>Sun, 20 Mar 2022 15:56:39 +0000</pubDate>
       
-      <guid>https://wallacelabs.tech/categories/docker/</guid>
+      <guid>https://wallacelabs.tech/categories/data-backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scripting</title>
+      <link>https://wallacelabs.tech/categories/scripting/</link>
+      <pubDate>Sun, 20 Mar 2022 15:56:39 +0000</pubDate>
+      
+      <guid>https://wallacelabs.tech/categories/scripting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tutorials</title>
       <link>https://wallacelabs.tech/categories/tutorials/</link>
-      <pubDate>Thu, 03 Mar 2022 13:35:19 -0500</pubDate>
+      <pubDate>Sun, 20 Mar 2022 15:56:39 +0000</pubDate>
       
       <guid>https://wallacelabs.tech/categories/tutorials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://wallacelabs.tech/categories/docker/</link>
+      <pubDate>Thu, 03 Mar 2022 13:35:19 -0500</pubDate>
+      
+      <guid>https://wallacelabs.tech/categories/docker/</guid>
       <description></description>
     </item>
     

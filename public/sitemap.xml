@@ -2,17 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://wallacelabs.tech/tags/bulk-upload/</loc>
+    <lastmod>2022-03-20T15:56:39+00:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/categories/</loc>
+    <lastmod>2022-03-20T15:56:39+00:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/categories/data-backup/</loc>
+    <lastmod>2022-03-20T15:56:39+00:00</lastmod>
+  </url><url>
     <loc>https://wallacelabs.tech/posts/exploring-google-workspace-upload-limits/</loc>
+    <lastmod>2022-03-20T15:56:39+00:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/tags/google-workspace/</loc>
     <lastmod>2022-03-20T15:56:39+00:00</lastmod>
   </url><url>
     <loc>https://wallacelabs.tech/posts/</loc>
     <lastmod>2022-03-20T15:56:39+00:00</lastmod>
   </url><url>
-    <loc>https://wallacelabs.tech/</loc>
+    <loc>https://wallacelabs.tech/tags/rclone/</loc>
     <lastmod>2022-03-20T15:56:39+00:00</lastmod>
   </url><url>
-    <loc>https://wallacelabs.tech/categories/</loc>
-    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
+    <loc>https://wallacelabs.tech/categories/scripting/</loc>
+    <lastmod>2022-03-20T15:56:39+00:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/tags/</loc>
+    <lastmod>2022-03-20T15:56:39+00:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/categories/tutorials/</loc>
+    <lastmod>2022-03-20T15:56:39+00:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/tags/unlimited-cloud-storage/</loc>
+    <lastmod>2022-03-20T15:56:39+00:00</lastmod>
+  </url><url>
+    <loc>https://wallacelabs.tech/</loc>
+    <lastmod>2022-03-20T15:56:39+00:00</lastmod>
   </url><url>
     <loc>https://wallacelabs.tech/categories/docker/</loc>
     <lastmod>2022-03-03T13:35:19-05:00</lastmod>
@@ -30,12 +54,6 @@
     <lastmod>2022-03-03T13:35:19-05:00</lastmod>
   </url><url>
     <loc>https://wallacelabs.tech/posts/static-site-hosting-with-docker-hugo-and-nginx-proxy-manger/</loc>
-    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
-  </url><url>
-    <loc>https://wallacelabs.tech/tags/</loc>
-    <lastmod>2022-03-03T13:35:19-05:00</lastmod>
-  </url><url>
-    <loc>https://wallacelabs.tech/categories/tutorials/</loc>
     <lastmod>2022-03-03T13:35:19-05:00</lastmod>
   </url><url>
     <loc>https://wallacelabs.tech/categories/web-hosting/</loc>

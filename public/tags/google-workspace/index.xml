@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>tutorials on wallaceLabs</title>
-    <link>https://wallacelabs.tech/categories/tutorials/</link>
-    <description>Recent content in tutorials on wallaceLabs</description>
+    <title>Google Workspace on wallaceLabs</title>
+    <link>https://wallacelabs.tech/tags/google-workspace/</link>
+    <description>Recent content in Google Workspace on wallaceLabs</description>
     <image>
       <url>https://wallacelabs.tech/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://wallacelabs.tech/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 20 Mar 2022 15:56:39 +0000</lastBuildDate><atom:link href="https://wallacelabs.tech/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2022 15:56:39 +0000</lastBuildDate><atom:link href="https://wallacelabs.tech/tags/google-workspace/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exploring Google Workspace Upload Limits</title>
       <link>https://wallacelabs.tech/posts/exploring-google-workspace-upload-limits/</link>
@@ -17,15 +17,6 @@
       
       <guid>https://wallacelabs.tech/posts/exploring-google-workspace-upload-limits/</guid>
       <description>Overview Google Workspace Enterprise plans (successor to G Suite Business plans) include unlimited Google Drive storage for licensed users, but there is a strict 750Gb limit on data a licensed user can upload to their account within 24 hours. This limit is generally quite reasonable and should not pose an issue. The vast majority of people today do not have internet connections sufficient to upload 750Gb of data within 24 hours even if they wanted to.</description>
-    </item>
-    
-    <item>
-      <title>Static Site Hosting for Free with Docker, Hugo, and NGINX Proxy Manger</title>
-      <link>https://wallacelabs.tech/posts/static-site-hosting-with-docker-hugo-and-nginx-proxy-manger/</link>
-      <pubDate>Thu, 03 Mar 2022 13:35:19 -0500</pubDate>
-      
-      <guid>https://wallacelabs.tech/posts/static-site-hosting-with-docker-hugo-and-nginx-proxy-manger/</guid>
-      <description>Overview It seems appropriate that my first post on this site be an exploration of its own technical underpinnings. That being said, before I get too far into the weeds, a bit of context. When I set out to build my site I had a few goals in mind. Those goals can be reasonably summarized as wanting to build a site from markdown files in Github, and self-host it using docker containers.</description>
     </item>
     
   </channel>
