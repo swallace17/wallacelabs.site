@@ -1,7 +1,7 @@
 ---
 title: "Operating an Unraid-Hosted, Containerized Wireguard VPN Server on a VLAN"
 date: 2022-03-21T20:29:16Z
-draft: true
+draft: false
 ShowToc: true
 cover:
     image: "cover.png"
