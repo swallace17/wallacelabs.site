@@ -9,14 +9,23 @@
       <link>https://wallacelabs.tech/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 03 Mar 2022 13:35:19 -0500</lastBuildDate><atom:link href="https://wallacelabs.tech/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Mar 2022 20:29:16 +0000</lastBuildDate><atom:link href="https://wallacelabs.tech/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Operating an Unraid-Hosted, Containerized Wireguard VPN Server on a VLAN</title>
+      <link>https://wallacelabs.tech/posts/operating-an-unraid-hosted-containerized-wireguard-vpn-server-on-a-vlan/</link>
+      <pubDate>Mon, 21 Mar 2022 20:29:16 +0000</pubDate>
+      
+      <guid>https://wallacelabs.tech/posts/operating-an-unraid-hosted-containerized-wireguard-vpn-server-on-a-vlan/</guid>
+      <description>I run my home network on Ubiquiti UniFi based hardware utilizing a UniFi Dream Machine Pro (UDMP) as my gateway/firewall, along with an assortment of UniFi Access Points (APs) and managed switches. In the event that I need to remote into my network, my gateway operates an L2TP over IPsec VPN. Using the built in Radius server, I&amp;rsquo;ve been able to configure this VPN so that remote clients are automatically routed to a specific subnet via a VLAN tag.</description>
+    </item>
+    
     <item>
       <title>Static Site Hosting for Free with Docker, Hugo, and NGINX Proxy Manger</title>
       <link>https://wallacelabs.tech/posts/static-site-hosting-with-docker-hugo-and-nginx-proxy-manger/</link>
       <pubDate>Thu, 03 Mar 2022 13:35:19 -0500</pubDate>
       
       <guid>https://wallacelabs.tech/posts/static-site-hosting-with-docker-hugo-and-nginx-proxy-manger/</guid>
-      <description>Overview It seems appropriate that my first post on this site be an exploration of its own technical underpinnings. That being said, before I get too far into the weeds, a bit of context. When I set out to build my site I had a few goals in mind. Those goals can be reasonably summarized as wanting to build a site from markdown files in Github, and self-host it using docker containers.</description>
+      <description>It seems appropriate that my first post on this site be an exploration of its own technical underpinnings. That being said, before I get too far into the weeds, a bit of context. When I set out to build my site I had a few goals in mind. Those goals can be reasonably summarized as wanting to build a site from markdown files in Github, and self-host it using docker containers.</description>
     </item>
     
   </channel>

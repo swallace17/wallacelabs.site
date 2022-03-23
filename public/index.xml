@@ -9,14 +9,23 @@
       <link>https://wallacelabs.tech/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 20 Mar 2022 15:56:39 +0000</lastBuildDate><atom:link href="https://wallacelabs.tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Mar 2022 20:29:16 +0000</lastBuildDate><atom:link href="https://wallacelabs.tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Operating an Unraid-Hosted, Containerized Wireguard VPN Server on a VLAN</title>
+      <link>https://wallacelabs.tech/posts/operating-an-unraid-hosted-containerized-wireguard-vpn-server-on-a-vlan/</link>
+      <pubDate>Mon, 21 Mar 2022 20:29:16 +0000</pubDate>
+      
+      <guid>https://wallacelabs.tech/posts/operating-an-unraid-hosted-containerized-wireguard-vpn-server-on-a-vlan/</guid>
+      <description>I run my home network on Ubiquiti UniFi based hardware utilizing a UniFi Dream Machine Pro (UDMP) as my gateway/firewall, along with an assortment of UniFi Access Points (APs) and managed switches. In the event that I need to remote into my network, my gateway operates an L2TP over IPsec VPN. Using the built in Radius server, I&amp;rsquo;ve been able to configure this VPN so that remote clients are automatically routed to a specific subnet via a VLAN tag.</description>
+    </item>
+    
     <item>
       <title>Exploring Google Workspace Upload Limits</title>
       <link>https://wallacelabs.tech/posts/exploring-google-workspace-upload-limits/</link>
       <pubDate>Sun, 20 Mar 2022 15:56:39 +0000</pubDate>
       
       <guid>https://wallacelabs.tech/posts/exploring-google-workspace-upload-limits/</guid>
-      <description>Overview Google Workspace Enterprise plans (successor to G Suite Business plans) include unlimited Google Drive storage for licensed users, but there is a strict 750Gb limit on data a licensed user can upload to their account within 24 hours. This limit is generally quite reasonable and should not pose an issue. The vast majority of people today do not have internet connections sufficient to upload 750Gb of data within 24 hours even if they wanted to.</description>
+      <description>Google Workspace Enterprise plans (successor to G Suite Business plans) include unlimited Google Drive storage for licensed users, but there is a strict 750Gb limit on data a licensed user can upload to their account within 24 hours. This limit is generally quite reasonable and should not pose an issue. The vast majority of people today do not have internet connections sufficient to upload 750Gb of data within 24 hours even if they wanted to.</description>
     </item>
     
     <item>
@@ -25,7 +34,7 @@
       <pubDate>Thu, 03 Mar 2022 13:35:19 -0500</pubDate>
       
       <guid>https://wallacelabs.tech/posts/static-site-hosting-with-docker-hugo-and-nginx-proxy-manger/</guid>
-      <description>Overview It seems appropriate that my first post on this site be an exploration of its own technical underpinnings. That being said, before I get too far into the weeds, a bit of context. When I set out to build my site I had a few goals in mind. Those goals can be reasonably summarized as wanting to build a site from markdown files in Github, and self-host it using docker containers.</description>
+      <description>It seems appropriate that my first post on this site be an exploration of its own technical underpinnings. That being said, before I get too far into the weeds, a bit of context. When I set out to build my site I had a few goals in mind. Those goals can be reasonably summarized as wanting to build a site from markdown files in Github, and self-host it using docker containers.</description>
     </item>
     
     
