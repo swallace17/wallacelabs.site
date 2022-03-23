@@ -25,9 +25,9 @@ params:
     ShowShareButtons: true
     ShowPostNavLinks: true
 ---
-## Overview
 It seems appropriate that my first post on this site be an exploration of its own technical underpinnings. That being said, before I get too far into the weeds, a bit of context. When I set out to build my site I had a few goals in mind. Those goals can be reasonably summarized as wanting to build a site from markdown files in Github, and self-host it using docker containers. Simple enough, but lets unpack that a bit:
 
+## Goals
 * Self-Host
   * Run all website infrastructure in my home, and avoid paying a hosting provider like Squarespace or Wix.
 * Write all my posts in [markdown](https://daringfireball.net/projects/markdown/)

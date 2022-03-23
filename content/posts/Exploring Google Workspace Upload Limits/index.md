@@ -26,7 +26,6 @@ params:
     ShowShareButtons: true
     ShowPostNavLinks: true
 ---
-## Overview
 Google Workspace Enterprise plans (successor to G Suite Business plans) include unlimited Google Drive storage for licensed users, but [there is a strict 750Gb limit](https://apps.google.com/supportwidget/articlehome?hl=en&article_url=https%3A%2F%2Fsupport.google.com%2Fa%2Fanswer%2F172541%3Fhl%3Den&product_context=172541&product_name=UnuFlow&trigger_context=a) on data a licensed user can upload to their account within 24 hours. This limit is generally quite reasonable and should not pose an issue. The vast majority of people today do not have internet connections sufficient to upload 750Gb of data within 24 hours [even if they wanted to](https://www.speedtest.net/global-index). That being said, some people do have sufficient connections, and I'm happy to count myself among them (Thanks, [altafiber!](https://www.cincinnatibell.com/)). 
 
 With a 250Mb/s upload speed, I have personally run into situations where I happen to need a lot of data, say 800Gb (just over the daily limit), uploaded ASAP. With my connection, I should be able to upload that data in a little more more than 7.5 hours, but instead I'm stuck waiting at least 24. Not the end of the world, but frustrating nonetheless. Recently, I used the time I was stuck waiting due to this limit to explore if there were any ways around it. Turns out, there's a couple!
