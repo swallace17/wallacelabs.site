@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Home Assistant on wallaceLabs</title>
+    <link>https://wallacelabs.tech/tags/home-assistant/</link>
+    <description>Recent content in Home Assistant on wallaceLabs</description>
+    <image>
+      <url>https://wallacelabs.tech/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://wallacelabs.tech/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 17 Apr 2022 03:55:50 +0000</lastBuildDate><atom:link href="https://wallacelabs.tech/tags/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fulfilling Smart Lighting&#39;s Natural Purpose</title>
+      <link>https://wallacelabs.tech/posts/fulfilling-smart-lightings-natural-purpose/</link>
+      <pubDate>Sun, 17 Apr 2022 03:55:50 +0000</pubDate>
+      
+      <guid>https://wallacelabs.tech/posts/fulfilling-smart-lightings-natural-purpose/</guid>
+      <description>I was originally going to title this post &amp;ldquo;Optimizing the Circadian Lighting Home Assistant Integration for use with Phillips Hue.&amp;rdquo; Thats the core of what the below is all about, but I eventually reconsidered, thinking it sounded a bit too much like jargon soup. So, before getting too into the weeds, lets begin by talking generally about smart lighting in the home.
+In my ongoing journey to create an ever more integrated smart-home, I have opted to utilize the Phillips Hue platform for my lighting.</description>
+    </item>
+    
+  </channel>
+</rss>

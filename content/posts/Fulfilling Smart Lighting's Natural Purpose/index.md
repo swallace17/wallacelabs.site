@@ -1,7 +1,7 @@
 ---
 title: "Fulfilling Smart Lighting's Natural Purpose"
 date: 2022-04-17T03:55:50Z
-draft: true
+draft: false
 ShowToc: true
 cover:
     image: "cover.png"

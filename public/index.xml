@@ -9,7 +9,17 @@
       <link>https://wallacelabs.tech/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 21 Mar 2022 20:29:16 +0000</lastBuildDate><atom:link href="https://wallacelabs.tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Apr 2022 03:55:50 +0000</lastBuildDate><atom:link href="https://wallacelabs.tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fulfilling Smart Lighting&#39;s Natural Purpose</title>
+      <link>https://wallacelabs.tech/posts/fulfilling-smart-lightings-natural-purpose/</link>
+      <pubDate>Sun, 17 Apr 2022 03:55:50 +0000</pubDate>
+      
+      <guid>https://wallacelabs.tech/posts/fulfilling-smart-lightings-natural-purpose/</guid>
+      <description>I was originally going to title this post &amp;ldquo;Optimizing the Circadian Lighting Home Assistant Integration for use with Phillips Hue.&amp;rdquo; Thats the core of what the below is all about, but I eventually reconsidered, thinking it sounded a bit too much like jargon soup. So, before getting too into the weeds, lets begin by talking generally about smart lighting in the home.
+In my ongoing journey to create an ever more integrated smart-home, I have opted to utilize the Phillips Hue platform for my lighting.</description>
+    </item>
+    
     <item>
       <title>Operating an Unraid-Hosted, Containerized Wireguard VPN Server on a VLAN</title>
       <link>https://wallacelabs.tech/posts/operating-an-unraid-hosted-containerized-wireguard-vpn-server-on-a-vlan/</link>
